@@ -1,4 +1,4 @@
-package com.yew1eb;
+package com.yew1eb.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
