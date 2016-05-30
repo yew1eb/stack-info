@@ -2,10 +2,12 @@ package com.yew1eb.controller;
 
 import com.yew1eb.model.User;
 import com.yew1eb.service.UserService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,15 +26,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/user")
-    @ResponseBody
-    public User findUserById(@RequestParam(name = "id") int id) {
+    @ApiOperation(value = "获取用户详细信息", notes = "根据url的id来获取用户详细信息")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public User findUserById(@RequestParam(name = "id") Long id) {
         User user = userService.findUserById(id);
         return user;
     }
 
-    @RequestMapping("/alluser")
-    @ResponseBody
+    @ApiOperation(value="获取用户列表", notes="")
+    @RequestMapping(value = "/alluser", method = RequestMethod.GET)
     public List<User> getAllUser() {
         return userService.getAllUser();
     }

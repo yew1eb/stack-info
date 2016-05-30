@@ -20,10 +20,10 @@ import javax.sql.DataSource;
 @Configuration
 public class MyBatisConfig {
 
+
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
-        System.out.println(System.getProperties());
         return new com.alibaba.druid.pool.DruidDataSource();
     }
 

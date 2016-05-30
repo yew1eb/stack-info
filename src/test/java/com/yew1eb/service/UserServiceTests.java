@@ -25,7 +25,7 @@ public class UserServiceTests {
 
     @Test
     public void test() throws Exception {
-        User user = userSerivce.findUserById(1);
+        User user = userSerivce.findUserById(2L);
         System.out.println(user);
         //Assert.assertEquals(3, userSerivce.getAllUser().size());
     }

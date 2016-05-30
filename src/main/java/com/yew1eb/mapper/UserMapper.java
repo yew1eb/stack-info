@@ -14,7 +14,7 @@ import java.util.List;
 public interface UserMapper {
 
     @Select("select id, name, age, password from user where id = #{id}")
-    User findUserById(@Param("id") int id);
+    User findUserById(@Param("id") Long id);
 
     @Select("select id, name, age, password from user")
     List<User> getAllUser();

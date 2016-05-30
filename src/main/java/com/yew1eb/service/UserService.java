@@ -22,7 +22,7 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public User findUserById(int id) {
+    public User findUserById(Long id) {
         User user = userMapper.findUserById(id);
         return user;
     }
