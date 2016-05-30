@@ -29,7 +29,7 @@ public class UserController {
     @ApiOperation(value = "获取用户详细信息", notes = "根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public User findUserById(@RequestParam(name = "id") Long id) {
+    public User findUserById(@RequestParam(name = "id", defaultValue = "1") Long id) {
         User user = userService.findUserById(id);
         return user;
     }

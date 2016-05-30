@@ -23,6 +23,7 @@ public class UserService {
     private UserMapper userMapper;
 
     public User findUserById(Long id) {
+        LOG.info("findUserById : {}", id);
         User user = userMapper.findUserById(id);
         return user;
     }

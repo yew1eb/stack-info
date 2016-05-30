@@ -1,12 +1,12 @@
 language: java
 jdk:
   - oraclejdk8
-  - oraclejdk7
-  - openjdk6
+
+service_name:
+  - travis-pro
 
 script:
   - mvn clean -U install
-  - mvn spring-boot:run
 
 after_success:
-  - mvn clean cobertura:cobertura coveralls:report
+  - mvn clean cobertura:cobertura coveralls:report -DrepoToken=Bss2ibmZGyQ2dPDEK21HALv67CMB8L5Bb
