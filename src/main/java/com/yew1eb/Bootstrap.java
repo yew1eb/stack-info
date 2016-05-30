@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("com.yew1eb.mapper")
 public class Bootstrap {
     public static void main(String[] args) {SpringApplication.run(Bootstrap.class, args);}
 }

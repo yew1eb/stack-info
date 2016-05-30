@@ -19,7 +19,6 @@
     </parent>
 
     <properties>
-        <jdbc.version>6.0.2</jdbc.version>
         <druid.version>1.0.20</druid.version>
         <fastjson.version>1.2.12</fastjson.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,7 +47,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <!--Mybatis-->
+
+        <!-- start end about Datasource jars -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
@@ -62,13 +62,14 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${jdbc.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>${druid.version}</version>
         </dependency>
+        <!-- end about Datasource jars -->
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -80,6 +81,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- swagger2 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -89,6 +91,11 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yew1eb</groupId>
+            <artifactId>stackinfo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -118,29 +125,14 @@
         </plugins>
     </build>
 
-    <!-- Add Spring repositories -->
-    <!-- (you don't need this if you are using a .RELEASE version) -->
     <repositories>
         <repository>
-            <id>spring-snapshots</id>
-            <url>http://repo.spring.io/snapshot</url>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
-            <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
-        </repository>
     </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-snapshots</id>
-            <url>http://repo.spring.io/snapshot</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
-        </pluginRepository>
-    </pluginRepositories>
 </project>

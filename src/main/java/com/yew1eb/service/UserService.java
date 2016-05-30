@@ -1,28 +1,33 @@
 package com.yew1eb.service;
 
+import com.yew1eb.mapper.UserMapper;
+import com.yew1eb.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 /**
  * @author zhouhai
  * @createTime 16/5/29
  * @description
  */
 
-public interface UserService {
+@Service
+public class UserService {
+    private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
-    /**
-     * 新增一个用户
-     * @param name
-     * @param age
-     */
-    void create(String name, Integer age);
+    @Autowired
+    private UserMapper userMapper;
 
-    /**
-     * 根据name删除一个用户高
-     * @param name
-     */
-    void deleteByName(String name);
+    public User findUserById(int id) {
+        User user = userMapper.findUserById(id);
+        return user;
+    }
 
-    /**
-     * 获取用户总量
-     */
-    Integer getAllUsers();
+    public List<User> getAllUser() {
+        return userMapper.getAllUser();
+    }
 }

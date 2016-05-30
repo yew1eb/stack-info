@@ -1,9 +1,8 @@
-package com.yew1eb.web.controller;
+package com.yew1eb.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author zhouhai
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @Controller
-public class HelloController {
+public class IndexController {
 
     @RequestMapping("/")
     public String index(ModelMap map) {
