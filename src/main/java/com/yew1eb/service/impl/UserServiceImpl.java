@@ -1,6 +1,8 @@
 package com.yew1eb.service.impl;
 
+import com.yew1eb.mapper.UserMapper;
 import com.yew1eb.service.UserService;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -17,25 +19,20 @@ import javax.annotation.Resource;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private UserMapper userMapper;
 
     @Override
     public void create(String name, Integer age) {
-        jdbcTemplate.update("insert into USER(NAME, AGE) values(?, ?)", name, age);
+        userMapper.create(name, age);
     }
 
     @Override
     public void deleteByName(String name) {
-        jdbcTemplate.update("delete from USER where NAME = ?", name);
+        userMapper.deleteByName(name);
     }
 
     @Override
     public Integer getAllUsers() {
-        return jdbcTemplate.queryForObject("select count(1) from USER", Integer.class);
-    }
-
-    @Override
-    public void deleteAllUsers() {
-        jdbcTemplate.update("delete from USER");
+        return userMapper.getAllUsers();
     }
 }

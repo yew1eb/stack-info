@@ -19,3 +19,5 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+    main:
+      banner-mode: off
