@@ -8,13 +8,13 @@ package com.yew1eb.model;
 public class User {
 
     private Long uid;
-    private String login;
+    private String loginName;
     private String password;
     private String avatar;
     private String email;
-    private Long c_time;
-    private Long u_time;
-    private Integer role_id;
+    private Long cTime;
+    private Long uTime;
+    private Integer roleId;
     private Integer status;
 
     public Long getUid() {
@@ -25,12 +25,12 @@ public class User {
         this.uid = uid;
     }
 
-    public String getLogin() {
-        return login;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
     public String getPassword() {
@@ -57,28 +57,28 @@ public class User {
         this.email = email;
     }
 
-    public Long getC_time() {
-        return c_time;
+    public Long getcTime() {
+        return cTime;
     }
 
-    public void setC_time(Long c_time) {
-        this.c_time = c_time;
+    public void setcTime(Long cTime) {
+        this.cTime = cTime;
     }
 
-    public Long getU_time() {
-        return u_time;
+    public Long getuTime() {
+        return uTime;
     }
 
-    public void setU_time(Long u_time) {
-        this.u_time = u_time;
+    public void setuTime(Long uTime) {
+        this.uTime = uTime;
     }
 
-    public Integer getRole_id() {
-        return role_id;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setRole_id(Integer role_id) {
-        this.role_id = role_id;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public Integer getStatus() {
@@ -91,8 +91,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [uid=" + uid + ", login_name=" + login + ", pass_word=" + password + ", avatar=" + avatar
-                + ", email=" + email + ", create_time=" + c_time + ", update_time=" + u_time + ", role_id="
-                + role_id + ", status=" + status + "]";
+        return "User [uid=" + uid + ", login_name=" + loginName + ", pass_word=" + password + ", avatar=" + avatar
+                + ", email=" + email + ", create_time=" + cTime + ", update_time=" + uTime + ", role_id="
+                + roleId + ", status=" + status + "]";
     }
 }

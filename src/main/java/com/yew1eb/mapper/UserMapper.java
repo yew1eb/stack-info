@@ -16,11 +16,11 @@ import java.util.List;
 @Component
 public interface UserMapper {
 
-    String FIELDS = "uid,login,password,avatar,email,c_time,u_time,role_id,status";
+    String FIELDS = "uid,login_name,password,avatar,email,c_time,u_time,role_id,status";
     String TABLE = "t_user";
 
     @Select("SELECT " + FIELDS + " FROM " + TABLE + " WHERE uid = #{id}")
-    User findUserById(@Param("id") Long id);
+    User getUserById(@Param("id") Long id);
 
     @Select("SELECT " + FIELDS + " FROM " + TABLE + " LIMIT #{offset}, #{limit}")
     List<User> getAllUser(@Param("offset") Long offset,

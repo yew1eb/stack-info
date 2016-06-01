@@ -1,10 +1,15 @@
-package com.yew1eb.web;
+package com.yew1eb.web.controller;
 
+import com.yew1eb.service.FavoriteService;
+import com.yew1eb.service.NodeService;
+import com.yew1eb.service.NoticeService;
+import com.yew1eb.service.TopicService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author zhouhai
@@ -13,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
+@RequestMapping("/")
 public class IndexController {
 
-    @RequestMapping("/")
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(ModelMap map) {
         map.addAttribute("host", "https://github.com/yew1eb");
         return "index";

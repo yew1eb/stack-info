@@ -30,7 +30,7 @@ public class UserController {
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public User findUserById(@RequestParam(name = "id", defaultValue = "1") Long id) {
-        User user = userService.findUserById(id);
+        User user = userService.getUser(id);
         return user;
     }
 
@@ -38,6 +38,6 @@ public class UserController {
     @RequestMapping(value = "/alluser", method = RequestMethod.GET)
     public List<User> getAllUser(@RequestParam(name = "offset", defaultValue = "1") Long offset,
                                  @RequestParam(name = "limit", defaultValue = "10") Long limit) {
-        return userService.getAllUser(offset, limit);
+        return userService.getUserList(offset, limit);
     }
 }

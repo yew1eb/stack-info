@@ -25,11 +25,11 @@ public class UserServiceTests {
 
 
     @Test
-    public void test() throws Exception {
-        User user = userSerivce.findUserById(2L);
+    public void testUserService() throws Exception {
+        User user = userSerivce.getUser(2L);
         System.out.println(user);
 
-        List<User> users = userSerivce.getAllUser(1L, 4L);
+        List<User> users = userSerivce.getUserList(1L, 4L);
         for (User user1 : users) {
             System.out.println(user);
         }
