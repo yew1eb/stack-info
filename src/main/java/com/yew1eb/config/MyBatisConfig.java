@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,8 @@ public class MyBatisConfig {
     public DataSource dataSource() {
         return new com.alibaba.druid.pool.DruidDataSource();
     }
+
+
 
 
     @Bean(name = "sqlSessionFactory")

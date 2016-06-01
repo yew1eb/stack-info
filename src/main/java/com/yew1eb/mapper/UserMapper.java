@@ -16,9 +16,13 @@ import java.util.List;
 @Component
 public interface UserMapper {
 
-    @Select("select id, name, age, password from user where id = #{id}")
+    String FIELDS = "uid,login,password,avatar,email,c_time,u_time,role_id,status";
+    String TABLE = "t_user";
+
+    @Select("SELECT " + FIELDS + " FROM " + TABLE + " WHERE uid = #{id}")
     User findUserById(@Param("id") Long id);
 
-    @Select("select id, name, age, password from user")
-    List<User> getAllUser();
+    @Select("SELECT " + FIELDS + " FROM " + TABLE + " LIMIT #{offset}, #{limit}")
+    List<User> getAllUser(@Param("offset") Long offset,
+                          @Param("limit") Long limit);
 }

@@ -1,4 +1,4 @@
-package com.yew1eb.controller;
+package com.yew1eb.web.rest;
 
 import com.yew1eb.model.User;
 import com.yew1eb.service.UserService;
@@ -34,9 +34,10 @@ public class UserController {
         return user;
     }
 
-    @ApiOperation(value="获取用户列表", notes="")
+    @ApiOperation(value = "获取用户列表", notes = "")
     @RequestMapping(value = "/alluser", method = RequestMethod.GET)
-    public List<User> getAllUser() {
-        return userService.getAllUser();
+    public List<User> getAllUser(@RequestParam(name = "offset", defaultValue = "1") Long offset,
+                                 @RequestParam(name = "limit", defaultValue = "10") Long limit) {
+        return userService.getAllUser(offset, limit);
     }
 }

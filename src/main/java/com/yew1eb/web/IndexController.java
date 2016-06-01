@@ -1,4 +1,4 @@
-package com.yew1eb.controller;
+package com.yew1eb.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,11 +1,6 @@
 package com.yew1eb.service;
 
-import com.yew1eb.mapper.UserMapper;
 import com.yew1eb.model.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,20 +10,9 @@ import java.util.List;
  * @description
  */
 
-@Service
-public class UserService {
-    private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
+public interface UserService {
 
-    @Autowired
-    private UserMapper userMapper;
+    User findUserById(Long id);
 
-    public User findUserById(Long id) {
-        LOG.info("findUserById : {}", id);
-        User user = userMapper.findUserById(id);
-        return user;
-    }
-
-    public List<User> getAllUser() {
-        return userMapper.getAllUser();
-    }
+    List<User> getAllUser(Long offset, Long limit);
 }
