@@ -1,6 +1,7 @@
 package com.yew1eb.service;
 
 
+import com.yew1eb.BaseTest;
 import com.yew1eb.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,22 +17,16 @@ import java.util.List;
  * @createTime 16/5/29
  * @description
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class UserServiceTests {
+
+public class UserServiceTests extends BaseTest{
 
     @Autowired
     private UserService userSerivce;
 
 
     @Test
-    public void testUserService() throws Exception {
-        User user = userSerivce.getUser(2L);
+    public void testGetUserByLoginName() throws Exception {
+        User user = userSerivce.getUserByLoginName("test");
         System.out.println(user);
-
-        List<User> users = userSerivce.getUserList(1L, 4L);
-        for (User user1 : users) {
-            System.out.println(user);
-        }
     }
 }

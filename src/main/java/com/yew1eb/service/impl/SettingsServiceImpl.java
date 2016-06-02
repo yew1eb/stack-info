@@ -2,6 +2,7 @@ package com.yew1eb.service.impl;
 
 import com.yew1eb.model.Settings;
 import com.yew1eb.service.SettingsService;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import java.util.Map;
  * @createTime 16/6/2
  * @description
  */
+@Service
 public class SettingsServiceImpl implements SettingsService {
     @Override
     public Settings getSettings(String skey) {

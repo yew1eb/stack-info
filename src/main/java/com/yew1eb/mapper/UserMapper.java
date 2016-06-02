@@ -22,6 +22,10 @@ public interface UserMapper {
     @Select("SELECT " + FIELDS + " FROM " + TABLE + " WHERE uid = #{id}")
     User getUserById(@Param("id") Long id);
 
+
+    @Select("SELECT " + FIELDS + " FROM " + TABLE + " where login_name = #{loginName} and status = 1")
+    User getUserByLoginName(@Param("loginName") String loginName);
+
     @Select("SELECT " + FIELDS + " FROM " + TABLE + " LIMIT #{offset}, #{limit}")
     List<User> getAllUser(@Param("offset") Long offset,
                           @Param("limit") Long limit);

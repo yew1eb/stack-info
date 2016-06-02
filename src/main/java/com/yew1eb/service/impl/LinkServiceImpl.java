@@ -3,6 +3,7 @@ package com.yew1eb.service.impl;
 import com.yew1eb.model.Link;
 import com.yew1eb.service.LinkService;
 import com.yew1eb.util.QueryParam;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @createTime 16/6/2
  * @description
  */
+@Service
 public class LinkServiceImpl implements LinkService {
     @Override
     public Link getLink(Integer id) {

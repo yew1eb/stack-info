@@ -2,6 +2,7 @@ package com.yew1eb.service.impl;
 
 import com.yew1eb.service.NoticeService;
 import com.yew1eb.util.Page;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import java.util.Map;
  * @createTime 16/6/2
  * @description
  */
+@Service
 public class NoticeServiceImpl implements NoticeService {
     @Override
     public boolean save(String type, Long to_uid, Long event_id) {

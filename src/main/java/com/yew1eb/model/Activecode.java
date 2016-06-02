@@ -14,6 +14,17 @@ public class ActiveCode {
     private Long eTime;
     private Long cTime;
 
+    public ActiveCode() {
+    }
+
+    public ActiveCode(Long uid, String code, String type, Long eTime, Long cTime) {
+        this.uid = uid;
+        this.code = code;
+        this.type = type;
+        this.eTime = eTime;
+        this.cTime = cTime;
+    }
+
     public Long getId() {
         return id;
     }
@@ -68,5 +79,10 @@ public class ActiveCode {
 
     public void setcTime(Long cTime) {
         this.cTime = cTime;
+    }
+
+    public String toString() {
+        return "ActiveCode [id=" + id + ", uid=" + uid + ", code=" + code + ", type=" + type + ", isUse=" + isUse
+                + ", expries_time=" + eTime + ", create_time=" + cTime + "]";
     }
 }

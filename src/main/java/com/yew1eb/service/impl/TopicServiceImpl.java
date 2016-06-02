@@ -4,6 +4,7 @@ import com.yew1eb.model.Topic;
 import com.yew1eb.service.TopicService;
 import com.yew1eb.util.Page;
 import com.yew1eb.util.QueryParam;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.Map;
  * @createTime 16/6/2
  * @description
  */
+@Service
 public class TopicServiceImpl implements TopicService {
     @Override
     public Topic getTopic(Long tid) {

@@ -2,6 +2,7 @@ package com.yew1eb.service.impl;
 
 import com.yew1eb.service.FavoriteService;
 import com.yew1eb.util.Page;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import java.util.Map;
  * @createTime 16/6/2
  * @description
  */
+@Service
 public class FavoriteServiceImpl implements FavoriteService {
     @Override
     public boolean isFavorite(String type, Long uid, Long event_id) {

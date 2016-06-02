@@ -21,10 +21,3 @@ spring:
 
   freemarker:
     cache: false
-
-  main:
-    banner-mode: off
-logging:
-  level: debug
-
-

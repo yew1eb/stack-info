@@ -18,7 +18,7 @@ public interface UserService {
 
     User getUser(Long uid);
 
-    User getUserByLoginName(String user_name);
+    User getUserByLoginName(String loginName);
 
     User getUser(QueryParam queryParam);
 

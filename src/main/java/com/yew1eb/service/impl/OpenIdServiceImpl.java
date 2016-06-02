@@ -2,12 +2,14 @@ package com.yew1eb.service.impl;
 
 import com.yew1eb.model.OpenId;
 import com.yew1eb.service.OpenIdService;
+import org.springframework.stereotype.Service;
 
 /**
  * @author zhouhai
  * @createTime 16/6/2
  * @description
  */
+@Service
 public class OpenIdServiceImpl implements OpenIdService {
     @Override
     public OpenId getOpenid(String type, Long open_id) {
