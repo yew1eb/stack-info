@@ -37,7 +37,7 @@ public class ActiveCodeServiceTests extends BaseTest {
 
     @Test
     public void TestUseCode() {
-        String code = "xsuCMoyB4cw1MSd2FTk8Cf9iJcofwNpo";
+        String code = "u0ZWmxmZwoIV1EdtjOVxYVSXEFqrBz9f";
         activeCodeService.useCode(code);
     }
 
