@@ -14,6 +14,16 @@ public class Comment {
     private String device;
     private Long cTime;
 
+    public Comment() {}
+    public Comment(Long uid, Long toUid, Long tid, String content, String device, Long cTime) {
+        this.uid = uid;
+        this.toUid = toUid;
+        this.tid = tid;
+        this.content = content;
+        this.device = device;
+        this.cTime = cTime;
+    }
+
     public Long getCid() {
         return cid;
     }

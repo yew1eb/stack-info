@@ -7,6 +7,6 @@ import com.yew1eb.BaseTest;
  * @createTime 16/6/1
  * @description
  */
-public class UserInfoServiceTests extends BaseTest {
+public class UserInfoServiceTests {
 
 }

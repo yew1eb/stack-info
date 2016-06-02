@@ -18,7 +18,7 @@ public interface CommentService {
 
     Page<Map<String, Object>> getPageListMap(QueryParam queryParam);
 
-    Long save(Long uid, Long toUid, Long tid, String content, String ua);
+    Integer save(Long uid, Long toUid, Long tid, String content, String ua);
 
     boolean delete(Long cid);
 
