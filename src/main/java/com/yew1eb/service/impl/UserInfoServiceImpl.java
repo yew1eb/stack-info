@@ -6,6 +6,7 @@ import com.yew1eb.service.UserInfoService;
 import com.yew1eb.util.Page;
 import com.yew1eb.util.QueryParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
  * @createTime 16/6/1
  * @description
  */
+@Service
 public class UserInfoServiceImpl implements UserInfoService {
 
     @Autowired
