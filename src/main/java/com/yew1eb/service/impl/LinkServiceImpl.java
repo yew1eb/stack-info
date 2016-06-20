@@ -1,8 +1,10 @@
 package com.yew1eb.service.impl;
 
+import com.yew1eb.mapper.LinkMapper;
 import com.yew1eb.model.Link;
 import com.yew1eb.service.LinkService;
 import com.yew1eb.util.QueryParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,13 +16,20 @@ import java.util.List;
  */
 @Service
 public class LinkServiceImpl implements LinkService {
+
+    @Autowired
+    private LinkMapper linkMapper;
+
     @Override
-    public Link getLink(Integer id) {
-        return null;
+    public Link getLink(Long id) {
+        return linkMapper.getLinkById(id);
     }
 
     @Override
     public List<Link> getLinkList(QueryParam queryParam) {
+        if(null != queryParam){
+            //return AR.find(queryParam).list(Link.class);
+        }
         return null;
     }
 
@@ -31,6 +40,10 @@ public class LinkServiceImpl implements LinkService {
 
     @Override
     public boolean delete(Integer id) {
+        if(null != id){
+           // AR.update("delete from t_link where id = ?", id).executeUpdate();
+            return true;
+        }
         return false;
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface LinkService {
 
-    Link getLink(Integer id);
+    Link getLink(Long id);
 
     List<Link> getLinkList(QueryParam queryParam);
 
